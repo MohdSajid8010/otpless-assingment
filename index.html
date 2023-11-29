@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otpless-assingment</title>
+</head>
+
+<body>
+    <div id="otpless-login-page">
+        <script type="text/javascript" src="https://otpless.com/auth.js"></script>
+
+        <script type="text/javascript">
+            let otplessUser = JSON.parse(localStorage.getItem("otplessUser"));
+            if (otplessUser) {
+                location.href = "./Profile/profile.html"
+            }
+
+            function otpless(otplessUser) {
+                console.log(JSON.stringify(otplessUser));
+                localStorage.setItem("otplessUser", JSON.stringify(otplessUser));
+                alert("sign in successfully!");
+                location.href = "./Profile/profile.html"
+            }
+
+        </script>
+</body>
+
+</html>
